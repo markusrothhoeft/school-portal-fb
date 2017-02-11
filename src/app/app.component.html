@@ -1,3 +1,21 @@
 <h1>
   {{title}}
 </h1>
+ <h1>{{ (item | async)?.name }} ist {{(item | async)?.size}} cm groß.</h1>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.$value}}
+  </li>
+</ul>
+  <h1>{{ item | async | json }}</h1>
+  <input type="text" #newname placeholder="Name" />
+  <input type="text" #newsize placeholder="Size" />
+  <br />
+  <button (click)="save(newname.value)">Set Name</button>
+  <button (click)="update(newsize.value)">Update Size</button>
+  <button (click)="delete()">Delete</button>
+
+  <div> {{ (af.auth | async)?.uid }} </div>
+  <div> {{ (af.auth | async)?.auth.displayName }} </div>
+  <button (click)="login()">Login</button>
+  <button (click)="logout()">Logout</button>
