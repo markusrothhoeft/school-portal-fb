@@ -19,3 +19,11 @@
   <div> {{ (af.auth | async)?.auth.displayName }} </div>
   <button (click)="login()">Login</button>
   <button (click)="logout()">Logout</button>
+  <br />
+  <input type="text" #newTeachername placeholder="Name" />
+  <input type="text" #newAge placeholder="Age" />
+  <button (click)="saveTeacher(newTeachername.value, newAge.value)">Save Teacher</button>
+
+<div >
+    <img src="{{(af.auth | async)?.auth.photoURL}}">
+</div>
